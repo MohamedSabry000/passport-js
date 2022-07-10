@@ -20,6 +20,9 @@ app.use('/static', express.static(__dirname + '/public'));
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
