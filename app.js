@@ -1,6 +1,14 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
+
+// MongoDB
 const mongoose = require('mongoose');
+const db = require('./config/keys').mongoURI;
+
+mongoose.connect(db, { useNewUrlParser: true })
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
+
 const passport = require('passport');
 
 const routes = require('./routes');
